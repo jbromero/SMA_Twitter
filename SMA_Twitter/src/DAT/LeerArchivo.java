@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -36,9 +37,9 @@ public class LeerArchivo {
     } // fin del m�todo abrirArchivo
 
       // lee registro del archivo
-    public ArrayList<String> leerRegistros() {
+    public ArrayList<tweet> leerRegistros() {
 
-        ArrayList<String> lista = new ArrayList<String>();
+        //ArrayList<String> lista = new ArrayList<String>();
         
         ArrayList<tweet> listaObj = new ArrayList<tweet>();
         
@@ -49,7 +50,13 @@ public class LeerArchivo {
                 //System.out.println(entrada.nextLine());
                 String cadena = entrada.nextLine();
                 //System.out.println("El mensaje es: "+cadena);
-                lista.add(cadena);
+                
+                ArrayList<String> lista = new ArrayList<String>(Arrays.asList(cadena.split(",")));
+                
+                String param1 = lista.get(0);
+                String param2 = lista.get(1);
+                tweet e = new tweet(param1, param2);
+                listaObj.add(e);
             } // fin de while
         } // fin de try
         catch (NoSuchElementException elementException) {
@@ -61,7 +68,7 @@ public class LeerArchivo {
             System.err.println("Error al leer del archivo.");
             System.exit(1);
         } // fin de catch
-        return lista;
+        return listaObj;
     }
 
     public void cerrarArchivo() {

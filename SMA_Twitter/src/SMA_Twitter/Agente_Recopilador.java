@@ -19,7 +19,7 @@ public class Agente_Recopilador extends Agent{
     String path = "DataSet/smileannotationsfinal.csv";
     LeerArchivo leer = new LeerArchivo(path);
     BLRecopilador objBLRecopilador = new BLRecopilador();
-    ArrayList<String> lista;
+    ArrayList<tweet> lista;
     String obj;
     String[] arr;
     String aux1;
@@ -33,11 +33,11 @@ public class Agente_Recopilador extends Agent{
         leer.abrirArchivo();
         lista = leer.leerRegistros();
         leer.cerrarArchivo();
-        /*for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 2; i++) {
             System.out.println(lista.get(i));
-        }*/
+        }
         
-        System.out.println(lista.get(0));
+        /*System.out.println(lista.get(0));
         obj = lista.get(0);
         arr = obj.split(",");
         aux1 = arr[0];
@@ -51,7 +51,7 @@ public class Agente_Recopilador extends Agent{
             Logger.getLogger(Agente_Recopilador.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Agente_Recopilador.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
         
         //Scanner datos = new Scanner(System.in);
         /*int numero1 = 0;
