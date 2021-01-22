@@ -8,6 +8,8 @@ package SMA_Twitter;
 import Clase.tweet;
 import DAT.LeerArchivo;
 import jade.core.Agent;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.lang.acl.ACLMessage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +23,8 @@ import java.util.regex.Pattern;
 public class anAgent extends Agent {
     
     public void happy(){
+        
+        System.out.println("Agente Analizador "+ getAID().getName() + " Iniciado");
         
         String[] cadenas = new String[3]; // creating array
         cadenas[0] = "happy ";
@@ -43,5 +47,21 @@ public class anAgent extends Agent {
         System.out.println("De "+cadenas.length+" tuits analizados, "+happy+" mencionan la palabra feliz");
         
     }
+    
+    //Metodo para recivir mensaje del agente Recopilador
+//    public class receive extends OneShotBehaviour {
+//
+//        @Override
+//        public void action() {
+//
+//            ACLMessage msg = receive();
+//
+//            if (msg != null) {
+//                happy(msg.getContent());
+//            } else {
+//                block();
+//            }
+//        }
+//    }
     
 }

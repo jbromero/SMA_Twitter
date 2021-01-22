@@ -17,11 +17,10 @@ public class Prueba {
     public static void main(String[] args) {
         Agente_Recopilador rec_agent = new Agente_Recopilador();
         anAgent anAg = new anAgent();
-        //tweet tw = new tweet();
-        //System.out.println(tw.getMensaje());
+        //
+        rec_agent.setup();
+        //rec_agent.LeerArchivo(path);
         
-        anAg.happy();
-        rec_agent.setup(); //retorna tweet(tweet, mensaje)
-        
+        anAg.happy();        
     }
 }

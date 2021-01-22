@@ -57,6 +57,9 @@ public class LeerArchivo {
                 String param2 = lista.get(1);
                 tweet e = new tweet(param1, param2);
                 listaObj.add(e);
+//                for (int i =0; i< listaObj.size(); i++) {
+//                    System.out.println(lista.get(i));
+//            };
             } // fin de while
         } // fin de try
         catch (NoSuchElementException elementException) {
